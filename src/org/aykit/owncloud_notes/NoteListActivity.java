@@ -9,7 +9,7 @@ import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import javax.net.ssl.HttpsURLConnection;
+import java.net.HttpURLConnection;
 import javax.net.ssl.SSLHandshakeException;
 
 import org.aykit.MyOwnNotes.R;
@@ -402,11 +402,21 @@ public class NoteListActivity
 				}
 			}
 			
-			urlToConnect = "https://" + basePath;  //this string will be passed to the async tasks
-			
-			if(debugOn)
+			if(tempUrl.getProtocol().equals("https")) //the protocol is https
 			{
-				Log.d(TAG, "urlToConnect:" + urlToConnect);
+				urlToConnect = "https://" + basePath;  //this string will be passed to the async tasks
+				if(debugOn)
+				{
+					Log.d(TAG, "urlToConnect (ssl): " + urlToConnect);
+				}
+			}
+			else //if the protocol isn't https, use http
+			{
+				urlToConnect = "http://" + basePath;  //this string will be passed to the async tasks
+				if(debugOn)
+				{
+					Log.d(TAG, "urlToConnect: " + urlToConnect);
+				}
 			}
 		}
 		catch(MalformedURLException e)
@@ -726,13 +736,13 @@ public class NoteListActivity
 		protected String doInBackground(String... strings) 
 		{
 			URL url = null;
-			HttpsURLConnection urlConnection = null;
+			HttpURLConnection urlConnection = null;
 			String urlString = strings[0];
 
 			try
 			{
 				url = new URL(urlString);
-				urlConnection = (HttpsURLConnection) url.openConnection();
+				urlConnection = (HttpURLConnection) url.openConnection();
 
 				urlConnection.setRequestMethod("DELETE");
 				urlConnection.setUseCaches(false);
@@ -835,8 +845,8 @@ public class NoteListActivity
 		protected String doInBackground(String... strings) 
 		{
 			URL url = null;
-			HttpsURLConnection urlConnection = null;
-			HttpsURLConnection urlTestConnection = null;
+			HttpURLConnection urlConnection = null;
+			HttpURLConnection urlTestConnection = null;
 			OutputStream outputStream = null;
 			String urlString = strings[0];
 			String toPost = strings[1];
@@ -846,9 +856,9 @@ public class NoteListActivity
 				JSONObject json = new JSONObject(toPost);
 				url = new URL(urlString);
 				
-				urlTestConnection = (HttpsURLConnection) url.openConnection();
+				urlTestConnection = (HttpURLConnection) url.openConnection();
 				
-				urlConnection = (HttpsURLConnection) url.openConnection();
+				urlConnection = (HttpURLConnection) url.openConnection();
 				urlConnection.setDoOutput(true);
 				urlConnection.setRequestMethod("PUT");
 				urlConnection.setUseCaches(false);
@@ -990,8 +1000,8 @@ public class NoteListActivity
 		protected Boolean doInBackground(String... strings) 
 		{
 			URL url = null;
-			HttpsURLConnection urlConnection = null;
-			HttpsURLConnection urlTestConnection = null;
+			HttpURLConnection urlConnection = null;
+			HttpURLConnection urlTestConnection = null;
 			OutputStream outputStream = null;
 			String urlString = strings[0];
 			String toPost = strings[1];
@@ -1002,9 +1012,9 @@ public class NoteListActivity
 				//Log.d(TAG, "json= " + json.toString() );
 				url = new URL(urlString);
 				
-				urlTestConnection = (HttpsURLConnection) url.openConnection();
+				urlTestConnection = (HttpURLConnection) url.openConnection();
 				
-				urlConnection = (HttpsURLConnection) url.openConnection();
+				urlConnection = (HttpURLConnection) url.openConnection();
 				urlConnection.setDoOutput(true);
 				urlConnection.setRequestMethod("POST");
 				urlConnection.setUseCaches(false);
@@ -1133,7 +1143,7 @@ public class NoteListActivity
 	    protected String doInBackground(String... anUrl) {
 	    	
 	    	StringBuilder stringBuilder = new StringBuilder();
-	    	HttpsURLConnection urlConnection = null;
+	    	HttpURLConnection urlConnection = null;
 	    	URL url = null;
 	    	
 			try {
@@ -1144,7 +1154,7 @@ public class NoteListActivity
 					Log.d("DOWNLOADTASK", "url:" + url.toString() );
 				}
 				
-				urlConnection = (HttpsURLConnection) url.openConnection();
+				urlConnection = (HttpURLConnection) url.openConnection();
 				urlConnection.setDoInput(true);
 				urlConnection.setRequestMethod("GET");
 				

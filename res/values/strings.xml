@@ -48,7 +48,7 @@
     <string name="settings_text_credentials">Credentials:</string>
     <string name="settings_text_server_address">Server-Address:</string>
     <string name="settings_text_server_address_hint">https://www.server.com[:port]</string>
-    <string name="settings_text_https">https://</string>
+    <string name="settings_text_url">https://</string>
     <string name="settings_text_username">Username:</string>
     <string name="settings_text_username_hint">username</string>
     <string name="settings_text_password">Password:</string>
@@ -64,24 +64,14 @@
     <!-- Toasts -->
     <string name="toast_enter_valid_username">Please enter your ownCloud-server username</string>
     <string name="toast_enter_password">Please enter your ownCloud-server password</string>
-    <string name="toast_enter_valid_https">Please enter a valid URL. Must begin with \"https://\"</string>
+    <string name="toast_enter_valid_url">Please enter a valid URL.</string>
     
     <!-- About strings -->
     <string name="text_aykit_logo">The aykit logo</string>
-    <string name="text_about_text">This app is brought to you by aykit - an association supporting art, culture and science. \nMore information on our website: \n\nhttp://aykit.org</string>
+    <string name="text_about_text">MyOwnNotes is brought to you by: aykit\n\nAn association supporting art, culture and science\n\nFor more information, visit: http://aykit.org\n\n\n|DarkCloud ProtocolUnlock\n|\n|Fork developed by Kevin MacMartin\n|prurigro@gmail.com\n|https://github.com/prurigro\n</string>
     
     <!-- Help strings -->
-    <string name="text_help_text">
-       	Which URL should I enter?\n
-		Enter the URL to the root of your ownCloud installation - that is: the same URL you use to connect to your ownCloud via the browser.\n(e.g.: https://myowncloud.com) 
-		\n\n
-		Can I use this app to connect to my ownCloud via http and not https ?\n
-		No, that is not possible. The Notes-API requests username and password to be sent for each connection. If you used http, you would send these vital informations as plaintext. Not a good idea! \n(Why? Read this: "Man-in-the-middle"-Attack http://en.wikipedia.org/wiki/Man-in-the-middle_attack)
-		\n\n
-		I have an ownCloud server with a self-signed certificate. Can I use this app for my server?\n
-		Yes, you can - but not out-of-the-box. You have to specifically tell Android to accept your self-signed certificate. This is done by manually adding the servers certificate to Androids Key-Manager.
-		\nSee this tutorial on how to do that: http://aykit.org/sites/myownnotes.html
-    </string>
+    <string name="text_help_text">Q: What URL should I use to connect to ownCloud?\nA: Enter the same URL as you use when you visit your ownCloud instance in a web browser (eg: https://my.ownclou.de)\n\nQ: Are my notes secure while they synchronize?\nA: ownCloud doesn\'t provide encryption itself, and to make sure your notes stay private, you should check that either the connection to the webserver hosting ownCloud, or the network you\'re connecting to it over provide a level of security you\'re comfortable with.\n\nQ: What methods are available to connect securely to ownCloud using?\nA: There are a number of options, including:\n1:SSL: This is configured on the webserver using certificates that can verify the identify of who you\'re connecting to as well as provide security that should keep everyone but the NSA out.\n2:VPN: Standing for Virtual Private Network, it provides private, encrypted communication between you and any other computers on it that works similar to a LAN at home, except you can access it from over the Internet too.\n3:Darknet: Highly encrypted private decentralized networks can be created using routers like CJDNS, and hosting your ownCloud instance over one of these is likely one of the most secure options, though also less friendly than the other two options if you\'re less comfortable with computers.\n\nQ: The devs of the official MyOwnNotes project say they force the use of https because everyone should be using it, and without it everyone can spy on all your traffic; why is the goal of this fork to bypass that reasonable sounding decision, is it developed by someone who doesn\'t care about privacy?\nA: Quite the opposite actually. I actually think forcing the average Joe to use encryption is probably a good thing despite being a bit anti-choice, because the average Joe likely won\'t be using anything if they\'re not using SSL. I personally run ownCloud in a less typical configuration however; hosting it through both https over the internet, as well as via the darknet over CJDNS, which provides better identify verification than SSL as well as post-quantum encryption light years ahead of what SSL can manage, so this fork is actually to improve security for myself.</string>
 
     <!-- NoteTable -->
     <string name="to_delete">to Delete</string>

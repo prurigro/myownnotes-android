@@ -49,7 +49,7 @@
     <string name="settings_text_credentials">Подаци за пријаву:</string>
     <string name="settings_text_server_address">Адреса сервера:</string>
     <string name="settings_text_server_address_hint">www.vasowncloudserver.com</string>
-    <string name="settings_text_https">https://</string>
+    <string name="settings_text_url">https://</string>
     <string name="settings_text_username">Корисничко име:</string>
     <string name="settings_text_username_hint">корисничко_име</string>
     <string name="settings_text_password">Лозинка:</string>
@@ -64,7 +64,7 @@
     <!-- Toasts -->
     <string name="toast_enter_valid_username">Унесите корисничко име за ваш ownCloud сервер</string>
     <string name="toast_enter_password">Унесите лозинку за ваш ownCloud сервер</string>
-    <string name="toast_enter_valid_https">Унесите исправну адресу. Мора почети са „https://“</string>
+    <string name="toast_enter_valid_url">Унесите исправну адресу.</string>
     
     <!-- About strings -->
     <string name="text_aykit_logo">„aykit“ лого</string>
@@ -74,9 +74,6 @@
     <string name="text_help_text">
        	Коју адресу да унесем?\n
 		Унесите УРЛ до корена ваше ownCloud инсталације — тј. исту адресу коју користите да се повежете на ownCloud сервер помоћу веб прегледача.\n(нпр: https://myowncloud.com) 
-		\n\n
-		Могу ли се повезати на мој ownCloud сервер преко „http“ уместо „https“?\n
-		Не, то није могуће. АПИ белешки захтева корисничко име и лозинку за свако повезивање. Користећи „http“ послали бисте ове важне податке као обичан текст, а то није добра идеја! \n(Зашто? Прочитајте ово: "Човек-у-средини"-напад http://en.wikipedia.org/wiki/Man-in-the-middle_attack)
 		\n\n
 		Поседујем ownCloud сервер са самопотписаним сертификатом. Хоће ли ова апликација радити за мој сервер?\n
 		Да, хоће — али морате посебно „рећи“ Андроиду да прихвати ваш самопотписани сертификат. Ово се постиже ручним додавањем сертификата сервера у Андроидов менаџер сертификата.

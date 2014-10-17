@@ -144,7 +144,7 @@ public class SettingsActivity extends Activity {
 			editor.putString(PREF_ADDRESS, address.getText().toString());
 		}
 		else {
-			Toast.makeText(this, R.string.toast_enter_valid_https, Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.toast_enter_valid_url, Toast.LENGTH_SHORT).show();
 			return false;
 		}
 		
@@ -231,7 +231,7 @@ public class SettingsActivity extends Activity {
 	 * <li>string is not empty</li>
 	 * <li>string is a valid URL (according to <code>URLUtil.isValidUrl()</code></li>
 	 * <li>string is a https-URL (according to <code>URLUtil.isHttpsUrl()</code>)</li>
-	 * <li>string is at least 13 characters long (example for minimum url: https://ab.at)</li>
+	 * <li>string is at least 9 characters long (example for minimum url: http://to)</li>
 	 * <p>If String ends with a slash ("/"), it is removed.</p>
 	 * 
 	 * @param toCheck	<code>EditText</code> containing the String to be checked
@@ -243,8 +243,7 @@ public class SettingsActivity extends Activity {
 		
 		if(stringToCheck.isEmpty()					|| 
 				!URLUtil.isValidUrl(stringToCheck)	|| 
-				!URLUtil.isHttpsUrl(stringToCheck) 	|| 
-				stringToCheck.length() < 13 )
+				stringToCheck.length() < 9 )
 		{
 			return false;
 		}

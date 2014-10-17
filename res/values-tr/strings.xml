@@ -48,7 +48,7 @@
     <string name="settings_text_credentials">Kimlik Bilgileri:</string>
     <string name="settings_text_server_address">Sunucu Adresi:</string>
     <string name="settings_text_server_address_hint">https://www.sunucu.com[:port]</string>
-    <string name="settings_text_https">https://</string>
+    <string name="settings_text_url">https://</string>
     <string name="settings_text_username">Kullanıcı Adı:</string>
     <string name="settings_text_username_hint">kullanıcı adı</string>
     <string name="settings_text_password">Parola:</string>
@@ -63,7 +63,7 @@
     <!-- Toasts -->
     <string name="toast_enter_valid_username">Lütfen ownCloud sunucu kullanıcı adınızı girin</string>
     <string name="toast_enter_password">Lütfen ownCloud sunucu parolanızı girin</string>
-    <string name="toast_enter_valid_https">Lütfen geçerli bir URL girin. \"https://\" ile başlamalıdır</string>
+    <string name="toast_enter_valid_url">Lütfen geçerli bir URL girin.</string>
     
     <!-- About strings -->
     <string name="text_aykit_logo">Aykit logosu</string>
@@ -73,9 +73,6 @@
     <string name="text_help_text">
        	Hangi URL girmeliyim?\n
 		ownCloud kurulumunuzun kök adresini girin - bu, tarayıcı ile ownCloud kurulumunuza eriştiğiniz URL ile aynıdır.\n(örn.: https://owncloudım.com)
-		\n\n
-		Bu uygulamayı ownCloud kurulumuma https ile değil de http ile bağlanabilir miyim?\n
-		Hayır, bu mümkün değil. Notlar API, kullanıcı adı ve parolanın her bağlantı için gönderilmesini gerektirir. HTTP kullanırsanız, bu önemli bilgileri düz metin olarak gönderirsiniz. Pek iyi bir fikir değil! \n(Niçin? Bunu okuyun "Ortadaki Adam" Saldırısı http://tr.wikipedia.org/wiki/Man-in-the-middle_attack)
 		\n\n
 		Kendinden imzalı bir ownCloud sunucum var. Bu uygulamayı sunucum için kullanabilir miyim?\n
 		Evet, ancak geldiği gibi değil. Android sisteminize, kendi imzalanmış sertifikanızı kabul etmesini söylemelisiniz. Bu Android Anahtar Yöneticisi içine sunucu sertifikalarını el ile eklenerek yapılır.
