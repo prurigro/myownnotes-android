@@ -1,20 +1,18 @@
-******************
-MyOwnNotes-android
-******************
+*****************************************
+MyOwnNotes-android (Protocol Unlock Fork)
+*****************************************
 Android App for the ownCloud Notes Application. Uses the (RESTful) API of ownCloud notes extension/app found here: https://github.com/owncloud/notes/wiki/API-0.2
 
+The Protocol Unlock Fork
+========================
 
-The right README
-================
-Make sure you read the README of the appropriate branch. The one you are seeing right now might not be the one you are looking for.
+Q: The developers of the official `MyOwnNotes-android`_ project say that they force the use of HTTPS because everyone should be using it, and that traffic can be spied on by a _MitM_ without it, so why create a fork that removes this restriction?
 
+A: Recommending the use of best practices is a good thing, and using some form of reasonably strong encryption on the connection between the user and ownCloud is definitely a best practice; in fact, it should be done without question. Using SSL through HTTPS is the most secure route most users will likely have available, but not the only secure route, and definitely not the most secure route. Requiring the use of HTTPS in **MyOwnNotes-android** is helpful guidance to those who don't know any better, but it restricts those with other secure methods of connecting, such as through a VPN, via encrypted darknet, etc.
 
-Contribute
-==========
-**Use the development branch** and please take a look at CONTRIBUTING.rst for information regarding extending this application.
+In my own case, speaking as the author of this fork, I have HTTPS available, but I also have a connection available over an encrypted darknet using `cjdns`_, which uses a `post-quantum`_ implementation of `salsa20`_, which is currently one of the most secure reviewed encryption algorithms available, as well as `IPv6`_ addresses generated using `public key encryption`_, making them much better at verifying identity IMO than a system requiring the trust of a third party `CA`_.
 
-The information there applies to **translations** and **issue submissions** as well.
-
+I'm not saying everyone should reconfigure their environments to be like mine, only that I happen to have a more secure option that the restriction on HTTPS meant I couldn't use, and I've put this fork online for anyone else who likes **MyOwnNotes-android**, but doesn't use HTTPS for whatever reason, and want to knowingly opt-out of its use.
 
 Install
 =======
@@ -23,7 +21,6 @@ to use this app you will need:
 + ownCloud server Version >= 6.0.3 see `ownCloud Docs`_
 + `ownCloud Notes App`_ Version >= 0.9 installed and activated on your server
 + Mobile device using Android Version >= 4.0
-+ SSL certificate for your server. For more information please read the `FAQ`_ below.
 + The `My Own Notes App`_ 
 
 
@@ -40,10 +37,6 @@ I get a JSON error - what do I do?
 ----------------------------------
 In ownCloud 7.0.2 the Notes App is not installed by default. You have to install and activate it. Try this and if you still get the error please submit a ticket.
 
-I can't connect. Do I really have to use SSL/TLS?
--------------------------------------------------
-Short answer: yes. Please read our comment on `Entwicklerbier.org`_ for more information.
-
 I can't connect via SSL. How do I add (self-signed) certificates?
 -----------------------------------------------------------------
 Use the android Security Settings to add self-signed certificates. Open your Settings, browse to Security and add them there. You can find more information on our `My Own Notes Website`_ and at `google dev`_.
@@ -52,7 +45,7 @@ If you still need help, feel free to `contact us`_. Please be aware that this ma
 
 Do you know any cheap SSL certificates?
 ---------------------------------------
-If you don't want to use self-signed certificates you can get one for free (for non-profit purposes only) at `StartSSL`_. If you can spend money, we suggest you to take a look at `CheapSSLsecurity`_. Please note that we are not affiliated with those companies in any way. We just want to help you finding cheap certificates.
+If you don't want to use self-signed certificates you can get one for free (for non-profit purposes only) at `StartSSL`_. If you can spend money, we suggest you to take a look at `CheapSSLsecurity`_. If you're willing to import their root certificate, https://www.cacert.org is a completely free option. Please note that we are not affiliated with those companies in any way. We just want to help you finding cheap certificates.
 
 I have my own certificate. However, it is not working.
 ------------------------------------------------------
@@ -78,6 +71,7 @@ Maintainer
 Developers
 ----------
 * Main Developer: `steppenhahn`_ 
+* Protocol Unlock Fork: `prurigro`_ 
 
 Translators
 -----------
@@ -96,6 +90,13 @@ License
 My Own Notes and all contributions are licensed as `GPL3`_ 
 
 
+.. _MyOwnNotes-android: https://github.com/aykit/myownnotes-android
+.. _cjdns: https://github.com/cjdelisle/cjdns
+.. _post-quantum: http://en.wikipedia.org/wiki/Post-quantum_cryptography
+.. _salsa20: http://en.wikipedia.org/wiki/Salsa20
+.. _IPv6: http://en.wikipedia.org/wiki/IPv6
+.. _public key encryption: http://en.wikipedia.org/wiki/Public-key_cryptography
+.. _CA: http://en.wikipedia.org/wiki/Certificate_authority
 .. _CheapSSLsecurity: https://cheapsslsecurity.com
 .. _contact us: mailto:z-o48hohw4l9qla@ay.vc
 .. _Entwicklerbier.org: https://blog.entwicklerbier.org/2014/05/securing-the-internet-of-things-how-about-securing-the-internet-first/
@@ -116,3 +117,4 @@ My Own Notes and all contributions are licensed as `GPL3`_
 .. _steppenhahn: https://github.com/steppenhahn
 .. _tmelikoff: http://https://github.com/tmelikoff
 .. _wakeup: https://github.com/wakeup
+.. _prurigro: https://github.com/prurigro

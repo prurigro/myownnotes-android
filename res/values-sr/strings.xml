@@ -64,7 +64,7 @@
     <!-- Toasts -->
     <string name="toast_enter_valid_username">Унесите корисничко име за ваш ownCloud сервер</string>
     <string name="toast_enter_password">Унесите лозинку за ваш ownCloud сервер</string>
-    <string name="toast_enter_valid_url">Унесите исправну адресу.</string>
+    <string name="toast_enter_valid_url">Унесите исправну адресу</string>
     
     <!-- About strings -->
     <string name="text_aykit_logo">„aykit“ лого</string>

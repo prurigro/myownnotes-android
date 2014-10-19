@@ -65,7 +65,7 @@
     <!-- Toasts -->
     <string name="toast_enter_valid_username">Por favor introduce el usuario de tu cuenta ownCloud</string>
     <string name="toast_enter_password">Por favor introduce la contraseña de tu cuenta ownCloud</string>
-    <string name="toast_enter_valid_url">Por favor, introduce una URL valida.</string>
+    <string name="toast_enter_valid_url">Por favor, introduce una URL valida</string>
     
     <!-- About strings -->
     <string name="text_aykit_logo">Logo de aykit</string>

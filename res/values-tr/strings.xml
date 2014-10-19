@@ -63,7 +63,7 @@
     <!-- Toasts -->
     <string name="toast_enter_valid_username">Lütfen ownCloud sunucu kullanıcı adınızı girin</string>
     <string name="toast_enter_password">Lütfen ownCloud sunucu parolanızı girin</string>
-    <string name="toast_enter_valid_url">Lütfen geçerli bir URL girin.</string>
+    <string name="toast_enter_valid_url">Lütfen geçerli bir URL girin</string>
     
     <!-- About strings -->
     <string name="text_aykit_logo">Aykit logosu</string>
